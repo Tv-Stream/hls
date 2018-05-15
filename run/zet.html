@@ -1,38 +1,81 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-                  <title>CNN-Indonesia</title>
-           <link href='../img/Privacy.ico' rel='shortcut icon'>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script src="../007/disable.js"></script>
-  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
-  <script src="../007/quality-levels.js"></script>
-  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-  <style>
-    body{
-      background-color:rgba(0, 0, 0, 0.1);
-    }
-    #video{
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      margin: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-  </style>
-</head>
-<body>
-    <video id="video" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
-           controls autoplay preload="auto"
-           poster="https://cdn.cnnindonesia.com/cnnid/images/Logo-CNN-Indonesia-Peta-Indonesia.jpg"
-           data-setup='{"example_option":true}'>
-        <source src="https://cdn-livetv1.metube.id/hls/sctv.m3u8"
-                type="application/vnd.apple.mpegurl">
-        </video>
-</body>
+<html lang="en">
+    <head>
+                <title>TRANS TV - meTube.id Embed</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://www.metube.id/cc-content/themes/default/css/reset.css" />
+        <link rel="stylesheet" href="https://www.metube.id/cc-content/themes/default/jwplayer/skins/glow.css" />
+        <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.js?v=4" ></script>
+        <script type="text/javascript" src="https://www.metube.id/cc-content/themes/default/js/AkamaiJWPlayerLoader.js"></script>
+        <script src="https://www.metube.id/cc-content/themes/default/js/jquery.min.js"></script>
+        <script>jwplayer.key = "ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=";</script>
+        <style type="text/css">
+            html, body, .video-unavailable, video, img, .video-js {
+                width:100% !important;
+                height:100% !important;
+                overflow:hidden;
+            }
+            .video-unavailable {
+                background-color:#000;
+                text-align:center;
+                color:#FFF;
+                font-size:16px;
+                font-family:arial,helvetica,sans-serif;
+            }
+            .video-unavailable p {
+                padding:50px;
+                line-height:1.5em;
+            }
+                        .jw-icon-next {
+                display: none !important;
+            }
+                    </style>
+    <body>
+<script>
+            mda_set("set", "UserId", "0");
+        mda_send();
+</script>        
+            <div id="myElement"></div>
+            <script>
+                jwplayer('myElement').setup({
+                                        playlist: [{
+                            file: 'https://cdn-livetv1.metube.id/hls/sctv.m3u8',
+                            image: "https://cdn-static.metube.id/live/image/TXkwS0qyRGLtritIbMBB.jpg",
+                            title: 'TRANS TV',
+                            mediaid: '1'
+                        }],
+                                        width: "100%",
+                    aspectratio: "16:9",
+                    abouttext: 'meTube.id',
+                                        stretching: "exactfit",
+                                                            aboutlink: 'https://www.metube.id',
+                    autostart: true,
+                    androidhls: true,
+                    displaydescription: true,
+                    displaytitle: true,
+                    visualplaylist: false,
+                    skin: {"active": "#DF2148", "inactive": "#CCCCCC", "name": "glow"},
+                    plugins: {
+                                            "https://www.metube.id/cc-content/themes/default/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
+                    },
+                                        ga: {
+                                                "idstring": "TRANS TV",
+                        "label": "178"
+                                            }
+                });
+                jwplayer('myElement').on('error', function () {
+                                    if (jwplayer('myElement').getPlaylistIndex() >= (jwplayer('myElement').getPlaylist().length - 1)) {
+                        $('#player-play').html('<img width="100%" height="431.44" src="https://www.metube.id/cc-content/themes/default/images/metube_error_player.jpg" alt="meTube error player"/>');
+                    } else {
+                        jwplayer('myElement').next();
+                    }
+                                });
+                jwplayer('myElement').on('ready', function () {
+                    akaJwPlugin = new AkamaiJWPlugin(jwplayer);
+                });
+            </script>
+            <!-- END VIDEO -->
+
+        
+    </body>
 </html>
