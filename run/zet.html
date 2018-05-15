@@ -23,20 +23,32 @@
     }
      </style>
   </head>
-     <video id="video" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
+     <video-js id="player" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
            controls preload="none"
            poster="../img/CNN-Indonesia.jpg"
-           data-setup='{"autoplay":true}'>
+           data-setup='{"":true}'>
         <source src="https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/playlist.m3u8"
                 type="application/vnd.apple.mpegurl">
-        </video>
+        </video-js>
+
     <script src="../swft/js/5.19.2/video.js"></script><!-- https://videojs.com -->
     <script src="../swft/js/hls.min.js?v=v0.9.1"></script><!-- https://github.com/video-dev/hls.js -->
     <script src="../swft/js/videojs-source-handler.min.js?v=0.3.1"></script><!-- https://github.com/streamroot/videojs-hlsjs-plugin -->
     <script src="../swft/js/quality-picker.js?v=v0.0.2"></script><!-- https://github.com/streamroot/videojs-quality-picker -->
     <script>
-        var player = videojs('video');
-        player.qualityPickerPlugin();
+var player = videojs('player');
+
+player.ready(function() {
+  var promise = player.play();
+
+  if (promise !== undefined) {
+    promise.then(function() {
+      // Autoplay started!
+    }).catch(function(error) {
+      // Autoplay was prevented.
+    });
+  }
+});
     </script>
   </body>
 </html>
