@@ -47,11 +47,6 @@
 videojs.options.autoplay = true;
 // initialize the player
     var player = videojs('video');
-    player.ready(function() {
-        this.one('loadeddata', function() {
-            this.currentTime(64);
-        });
-    });
     player.src({
       src: 'https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/playlist.m3u8',
       type: 'application/vnd.apple.mpegurl'
