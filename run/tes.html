@@ -37,13 +37,14 @@
      </style>
 </head>
 </body>
-      <video id="video"  style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
-             poster="../img/CNN-Indonesia.jpg" 
-         data-setup='{ "controls": true, "autoplay": auto, "preload": "auto" }'>
-  </video>
+ </video>
+  <video id="dr-kunto" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered" 
+  controls autoplay preload="auto"
+                 data-setup='{}'>
+   </video>
     
     <script>
-    var player = videojs('video');
+    var player = videojs('dr-kunto');
     player.src({
       src: 'https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/playlist.m3u8',
       type: 'application/vnd.apple.mpegurl'
