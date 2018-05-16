@@ -1,42 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>CNN-Indonesia</title>
-    <link href='../img/Privacy.ico' rel='shortcut icon'>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../swft/js/5.19.2/video-js.css" rel="stylesheet"><!-- https://videojs.com -->
-    <style>
-    body{
-      background-color:rgba(0, 0, 0, 0.1);
-    }
-    #video{
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      margin: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-     </style>
-  </head>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>videojs-contrib-hls embed</title>
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+</head>
+<body>
      <video id="video" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
            controls autoplay preload="auto"
            poster="../img/CNN-Indonesia.jpg"
            data-setup='{"example_option":true}'>
         </video>
-    <script src="../swft/js/5.19.2/video.js"></script><!-- https://videojs.com -->
-    <script src="../swft/js/hls.min.js?v=v0.9.1"></script><!-- https://github.com/video-dev/hls.js -->
-    <script src="../swft/js/videojs-source-handler.min.js?v=0.3.1"></script><!-- https://github.com/streamroot/videojs-hlsjs-plugin -->
-    <script src="../swft/js/quality-picker.js?v=v0.0.2"></script><!-- https://github.com/streamroot/videojs-quality-picker --> 
-      <script>
-    var player = videojs('video');
+  
+
+  <script src="https://unpkg.com/video.js/dist/video.js"></script><!-- https://videojs.com -->
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script><!-- https://github.com/video-dev/hls.js -->
+  <script>
+    const player = videojs('my_video_1');
     player.src({
-      src: 'https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/playlist.m3u8',
-      type: 'application/vnd.apple.mpegurl'
+      src: 'http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
+      type: 'application/x-mpegURL'
     });
-    </script>
+  </script>
+
 </body>
 </html>
